@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.bg-gray-750 {
+  background-color: #1a1a1a;
+}
+
+/* Transition animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease-out;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
+/* Custom Toast colors using CSS variables */
+:root {
+  --toastification-color-info: #000000 !important;
+  --toastification-color-success: #000000 !important;
+  --toastification-color-warning: #000000 !important;
+  --toastification-color-error: #000000 !important;
+  --toastification-color-default: #000000 !important;
+  --toastification-color-info-light: #000000 !important;
+  --toastification-color-success-light: #000000 !important;
+  --toastification-color-warning-light: #000000 !important;
+  --toastification-color-error-light: #000000 !important;
+  --toastification-color-default-light: #000000 !important;
+}
+
+/* Main toast styling */
+.Vue-Toastification__toast {
+  @apply bg-black border border-gray-800 rounded-lg shadow-lg text-white;
+  backdrop-filter: blur(8px);
+  max-width: 300px;
+  background-color: #000000 !important;
+  color: white !important;
+  border-color: #1f2937 !important; /* border-gray-800 */
+}
+
+/* Optional custom toast class */
+.black-toast {
+  background-color: #000000 !important;
+  color: white !important;
+  border: 1px solid rgba(75, 85, 99, 0.6) !important;
+  border-radius: 0.5rem !important;
+  max-width: 300px !important;
+}
+
+/* Toast type variants */
+.Vue-Toastification__toast--success,
+.Vue-Toastification__toast--error,
+.Vue-Toastification__toast--warning,
+.Vue-Toastification__toast--info,
+.Vue-Toastification__toast--default {
+  @apply bg-black border-gray-800 text-white;
+  background-color: #000000 !important;
+  color: white !important;
+  border-color: #1f2937 !important;
+}
+
+/* Toast icon */
+.Vue-Toastification__icon {
+  @apply text-white;
+  color: white !important;
+}
+
+/* Progress bar */
+.Vue-Toastification__progress-bar {
+  @apply bg-white/20;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Close button */
+.Vue-Toastification__close-button {
+  @apply text-white/70 hover:text-white;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.Vue-Toastification__close-button:hover {
+  color: white !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #111111;
+}
