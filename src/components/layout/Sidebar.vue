@@ -1,20 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { HomeIcon, UsersIcon } from '@heroicons/vue/24/outline';
+import { ref, computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { HomeIcon, UsersIcon, ShoppingBagIcon } from '@heroicons/vue/24/outline';
 
 const router = useRouter();
-const currentRoute = ref(router.currentRoute.value.path);
+const route = useRoute();
 
 const navigateTo = (path: string) => {
   router.push(path);
-  currentRoute.value = path;
 };
 
 const menuItems = [
-  { name: 'Home', path: '/', icon: HomeIcon },
-  { name: 'Users', path: '/users', icon: UsersIcon },
+  { name: 'Dashboard', path: '/dashboard', icon: HomeIcon },
+  { name: 'Users', path: '/dashboard/users', icon: UsersIcon },
+  { name: 'Products', path: '/dashboard/products', icon: ShoppingBagIcon },
 ];
+
+const isActive = (path: string) => {
+  if (path === '/dashboard') {
+    // Only highlight Dashboard when exactly on /dashboard
+    return route.path === '/dashboard';
+  } else {
+    // For other items, use startsWith to match nested routes
+    return route.path.startsWith(path);
+  }
+};
 </script>
 
 <template>
@@ -30,7 +40,7 @@ const menuItems = [
             @click="navigateTo(item.path)" 
             :class="[
               'flex items-center px-4 py-2.5 rounded-lg cursor-pointer transition-colors',
-              currentRoute === item.path 
+              isActive(item.path) 
                 ? 'bg-white text-black font-medium' 
                 : 'text-gray-300 hover:bg-white hover:text-black'
             ]"
