@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import Button from '@/components/ui/Button.vue';
-import { LinkIcon, TrashIcon, PhotoIcon } from '@heroicons/vue/24/outline';
+import { LinkIcon, TrashIcon } from '@heroicons/vue/24/outline';
 import { useToast } from '@/composables/useToast';
-import { isValidImageUrl, getImagePlaceholder } from '@/lib/imageUtils';
+import { isValidImageUrl } from '@/lib/imageUtils';
 
 const props = defineProps<{
   modelValue?: string;

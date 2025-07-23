@@ -2,7 +2,7 @@
 import { TrashIcon, MinusIcon, PlusIcon } from '@heroicons/vue/24/outline';
 import type { CartItem } from '@/stores/cartStore';
 
-const props = defineProps<{
+defineProps<{
   item: CartItem;
 }>();
 

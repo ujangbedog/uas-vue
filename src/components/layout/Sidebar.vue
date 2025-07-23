@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { HomeIcon, UsersIcon, ShoppingBagIcon } from '@heroicons/vue/24/outline';
 

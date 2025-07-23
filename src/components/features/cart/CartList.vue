@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button.vue';
 import CartItem from '@/components/features/cart/CartItem.vue';
 import type { CartItem as CartItemType } from '@/stores/cartStore';
 
-const props = defineProps<{
+defineProps<{
   items: CartItemType[];
 }>();
 

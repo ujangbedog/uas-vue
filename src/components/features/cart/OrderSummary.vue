@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue';
 
-const props = defineProps<{
+defineProps<{
   total: number;
   isProcessing: boolean;
 }>();
